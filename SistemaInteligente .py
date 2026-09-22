@@ -5,7 +5,7 @@
 #
 # Pasos:
 #   1. Abrir una terminal en la carpeta donde está este archivo.
-#   2. Ejecutar el comando:  python sistema_ruta.py
+#   2. Ejecutar el comando:  python SistemaInteligente.py
 #   3. Escribir el Punto A y el Punto B cuando el programa los pida,
 #      con el nombre exacto de la estación (mayúsculas y tildes).
 #
