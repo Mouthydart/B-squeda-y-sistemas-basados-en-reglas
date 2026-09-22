@@ -66,3 +66,23 @@ def rutas(x, y, visitadas):
         if z not in visitadas:
             for camino, total in rutas(z, y, visitadas + [z]):
                 yield [x] + camino, t + total
+
+# Regla 4
+# mejor_ruta(Punto A, Punto B) = la ruta(Punto A, Punto B) que de menor tiempo en total
+def mejor_ruta(a, b):
+    listaRutas = list(rutas(a, b, [a]))
+    if not listaRutas:
+        return None, None
+    return min(listaRutas, key=lambda r: r[1])
+ 
+#Si el usuario ingresa dos puntos, el sistema calcula la mejor ruta y el tiempo total de viaje entre ellos.
+puntoA = input("Punto A: ")
+puntoB = input("Punto B: ")
+camino, tiempo = mejor_ruta(puntoA, puntoB)
+ 
+#Salida: Se muestra la mejor ruta y el tiempo total de viaje entre los puntos ingresados por el usuario.
+if camino:
+    print("Mejor ruta:", " -> ".join(camino))
+    print("Tiempo total:", tiempo, "minutos")
+else:
+    print("No existe ruta entre esos puntos.")
